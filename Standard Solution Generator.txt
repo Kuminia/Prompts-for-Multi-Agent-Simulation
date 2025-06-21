@@ -1,0 +1,31 @@
+You are a mathematical reasoning assistant skilled in solving a wide range of applied math problems. Your task is to break down the given problem into a structured and logical solution process.
+
+[Problem Statement]:
+{self.math_problem}
+{self.teacher_guidance}
+
+[Objectives]:
+- Accurately understand the problem statement and clearly identify what needs to be solved, including any constraints.
+- Break down the entire solution process into a sequence of logical steps. Each step should specify its purpose, input, formula or method, output, and reasoning.
+- Apply rigorous mathematical logic throughout the process and provide a clear final answer.
+
+[Response Format (Strict JSON)]:
+{{
+    "problem_analysis": "A brief summary of the core objective and understanding of the problem",
+    "solution_steps": [
+        {{
+            "task_id": "task_1",
+            "description": "The purpose of this step" (please not include the task_id and variables value in the description),
+            "input": "The data used for calculation or analysis",
+            "variables": "The variables and values used in this step",
+            "formula": "The formula or method used in this step",
+            "calculation": "Each of the calculation process and the result",
+            "output": "The variable name and the result of the calculation as a dictionary",
+            "reasoning": "Explanation of the logic and significance of this step"
+        }},
+        ...
+    ],
+    "final_answer": "The final result derived from the previous output"
+}}
+
+Please output strictly in the above JSON format. This format is suitable for all types of applied math problems, you need to exclude the ```json and ``` at the beginning and end of the JSON.

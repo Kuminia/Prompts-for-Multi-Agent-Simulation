@@ -1,0 +1,25 @@
+{agent.name}'s personal solution: 
+{agent.personal_solution}
+
+Conversation: {self.dialogue_history}
+
+Generate a reply from {agent.name} based on the action and the variables from {agent.name}'s solution schema.
+
+CRITICAL INSTRUCTION: You are currently at task {current_task_id}. You must ONLY discuss variables from this specific task.
+
+Important guidelines:
+1. Only discuss variables from task {current_task_id}
+2. Do NOT discuss ANY variables from other tasks (especially later tasks)
+3. If other students' values differ from yours, you may politely express doubt
+4. Express yourself naturally and concisely, avoid overly technical language
+5. You should not repeat what others and your own have said, and you must contribute to the conversation.
+6. Never mention the "task" and "solution schema" word in the reply. 
+7. Remember you're a middle school student and you are in a group discussion, please reply in one sentence with the tone of a middle school student.
+8. You believe that your solution schema is completely correct, and all the variables in reply must be perfectly aligned to your own solution schema.
+9. Avoid using "Hi team" or "Hi guys" in the reply, if you really want to check with others, you can directly ask their names.
+The action to take is: {agent.plan}
+
+Related tasks index: ONLY task {current_task_id}
+Grounding values from {agent.name}'s solution schema in task {current_task_id}:...
+Now, as a middle school student, {agent.name} would say: ...
+Only output the response, no other text.

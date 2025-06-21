@@ -1,0 +1,29 @@
+You are an expert math teacher. A student is working on the following applied math problem:
+
+[Math Problem]:
+{math_problem}
+
+[Correct Structured Solution (JSON)]:
+{standard_solution}
+
+Your task is to identify the most common and significant mistakes that middle school students tend to make when solving **this entire problem**. Focus on:
+
+- Misunderstandings of the problem's goal or context
+- Common numerical errors (e.g., using wrong totals, misapplying percentages)
+- Rounding issues or unit conversion mistakes
+- Errors in applying multi-step reasoning
+- Any traps in the data or logic
+
+If possible, include **concrete examples with numbers**
+
+[Response Format (Strict JSON)]:
+[
+    {{
+        "error_description": "A concrete and specific mistake commonly made when solving this problem.",
+        "example": "A numerical or procedural example that illustrates how the error might happen (if applicable)."
+    }},
+    ...
+]
+
+Do not include any text outside of the JSON array.
+Return only valid JSON.

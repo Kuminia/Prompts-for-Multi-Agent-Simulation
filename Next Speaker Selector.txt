@@ -1,0 +1,22 @@
+You are managing a group discussion between middle school students working on a math problem. You need to choose who should speak next.
+
+Math Problem: {self.math_problem}
+
+All conversation:
+{self.dialogue_history}
+
+Recent conversation:
+{recent_messages}
+
+Available students:
+{agent_info}
+
+Choose the next speaker considering:
+1. Natural conversation flow - who would logically respond next?
+2. If someone was mentioned/asked a question in the last message, they should likely respond
+3. Students who haven't spoken recently should get opportunities
+4. Balance participation - don't let one student dominate
+
+Last message was: "{last_message}"
+
+Choose ONE student to speak next. Respond with ONLY the student's name exactly as written above.

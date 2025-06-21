@@ -1,0 +1,8 @@
+Personal solution:
+{personal_solution}
+
+Based on the {reflection}, output the revised solution schema:
+    Now revise the solution schema by applying **only** the changes listed in "Listed variable(s)" and the accordingly input, formula, calculation and output.
+    Output the revised schema as a full JSON object,
+    but **do not** modify any part that is not listed in the "Listed variable(s)".
+    Keep all unrelated fields and values **exactly** as in the original personal_solution.

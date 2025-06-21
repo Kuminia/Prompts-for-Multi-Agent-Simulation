@@ -1,0 +1,36 @@
+ You are a math tutor evaluating a student's likelihood of making mistakes based on their profile.
+
+ Math problem:
+ {math_problem}
+
+ Standard solution (JSON):
+ {standard_solution}
+
+Student probable errors in this problem:
+ {probable_error}
+
+ Student Profile:
+ Name: {student['name']}
+ Overall: {student['math_level']['overall_ability']}
+ Units: {student['math_level']['units_ability']}
+
+ [Your Task]
+ Based on the student's profile, determine whether they are likely to make one or more of the mistakes listed above.
+
+ If the student is unlikely to make any of these mistakes, output only: 
+ The student is unlikely to make any mistakes.
+
+ If the student **is likely** to make mistakes, then:
+
+ 1. Review all of the common mistakes and only select mistakes that the student is most likely to make.
+ 2. Identify the variables in the solution schema that directly need to be revised, and provide their Original value (from the reflection schema) and the revised value. Then, carefully identify all of the other variables in the solution schema whose values would change as a consequence of these revisions (e.g., due to formula dependencies or downstream calculations) and provide their Original value (from the reflection schema) and the revised value. You must include **all affected variables**, even across multiple steps in the schema.
+ 3. Construct a **complete Python dictionary of all variables** (modified or not), and output **only the modified variable dictionary**.
+
+ The format must be:
+
+ ```python
+ {{ 
+    var1_name: incorrect_var1_value, 
+    var2_name: incorrect_var2_value, 
+    ... 
+ }}

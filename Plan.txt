@@ -1,0 +1,26 @@
+{agent.name}'s reflection: {agent.reflection}
+
+{agent.name}'s personal solution: {agent.personal_solution}
+
+Conversation: {self.dialogue_history}
+
+Current task guidance: {task_guidance}
+
+IMPORTANT: You are currently at task {current_task_id}. You must ONLY focus on variables and calculations for this specific task.
+
+The next speaker is {agent.name}. Now please decide what action {agent.name} will take.
+Remember you are {agent.name}, and your actions should follow your solution schema. Please carefully examine the variables mentioned by others in the conversation.
+
+Important rules:
+1. You must STRICTLY adhere to the variables in task {current_task_id} ONLY
+2. You CANNOT discuss variables from other tasks (especially from later tasks)
+3. For any variables in the dialogue that are inconsistent with your solution schema values, you should try to request others to examine them carefully
+4. "Action" only indicates how {agent.name} will take action in the next response
+5. If you find anyone make mistakes, you should list your calculation process and the result of the calculation.
+6. If you change your solution schema based on your reflection, you should clearly tell others that you previously make mistakes(such as the variables, the calculation process, the result of the calculation, etc.), and then explain why you made the mistake and how to correct it.
+
+The output format is:
+  - Variables and values in the current task {current_task_id}:...
+  - {agent.name} thought about these variables:...
+  - Explain:...
+  - Action (discuss ONLY task {current_task_id} variables):...

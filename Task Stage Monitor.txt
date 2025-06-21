@@ -1,0 +1,43 @@
+You are analyzing a group discussion between middle school students working on a math problem. 
+Your task is to identify which specific math task they are discussing and whether they have fully completed it.
+
+Task information:
+- Natural task progression sequence: {task_sequence_str}
+- Current task ID: {self.current_task_id}
+
+Standard solution:
+{self.standard_solution}
+
+Conversation:
+{self.dialogue_history}
+
+All students in the discussion:
+{all_agents}
+
+IMPORTANT RULES:
+1. Tasks MUST be completed in sequential order - students cannot skip tasks
+2. Students can only advance to the next task when the current one is well understood
+3. If students are discussing variables from multiple tasks, they should be guided back to the current task
+4. The earliest uncompleted task should be considered the current focus
+
+Analyze the conversation focusing on these points:
+1. Are students actively discussing variables from the current task ({self.current_task_id})?
+2. Have they resolved/agreed on values for all variables in the current task?
+3. Are they starting to mention concepts or variables from the next task?
+4. Is there clear evidence they have completed discussing all variables in the current task?
+5. Is there evidence they're jumping ahead to later tasks prematurely?
+6. Do all student {all_agents} clearly discuss all of the variables and output of the current task ({self.current_task_id}) in the conversation?
+7. Do all student {all_agents} agree on the values of all variables and output of the current task ({self.current_task_id})?
+
+Format your response as JSON:
+{{
+    "current_task_id": "{self.current_task_id}",
+    "discussed_variables": ["list of variables from current task that have been discussed"],
+    "undiscussed_variables": ["list of variables from current task that have NOT been adequately discussed"],
+    "completion_level": <number 0-100 representing approximate % completion of current task>,
+    "premature_discussion": <true/false whether students are discussing future tasks prematurely>,
+    "ready_for_next_task": <true/false whether students appear ready to move to the next task>,
+    "variables_aligned": <true/false whether all students {all_agents}, they all agree on the values of current task variables and all of the students clearly discuss the variables in the conversation>,
+    "reasoning": "<detailed explanation of your assessment>",
+    "appropriate_phrases": ["<phrase 1>", "<phrase 2>", "<phrase 3>"]
+}}

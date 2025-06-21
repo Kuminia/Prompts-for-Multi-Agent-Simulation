@@ -1,0 +1,26 @@
+You are a math simulation assistant. Below is a correct structured solution to a math problem.
+
+Now, based on a specific student's tendencies, you are asked to generate a **mistake-included version** of this solution, by **modifying only the affected variables** according to the known error values.
+
+---
+
+Math Problem
+{math_problem}
+
+Standard Solution (JSON)
+{standard_solution}
+
+Student probable errors
+The student is likely to make mistakes on the following variables. Please reflect these incorrect values throughout the structured solution (formula, calculation, output, final answer):
+{probable_error}
+
+---
+
+[Your Task]
+Please return a structured solution in the **same JSON format** as the correct one, but include the above mistakes where applicable.
+
+- The solution structure (field names, task_ids) must remain exactly the same.
+- The modified output, formula, and calculations should reflect the error values.
+- Only change values directly affected by the listed variables.
+
+Return valid JSON only. Do not add explanations or extra text outside the JSON, you need to exclude the ```json and ``` at the beginning and end of the JSON.
